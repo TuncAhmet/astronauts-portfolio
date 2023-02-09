@@ -1,0 +1,58 @@
+---
+import { navData, socialData } from "../data/navData";
+---
+
+<header
+  class="w-full h-20 bg-transparent flex justify-center items-center text-white"
+>
+  <div class="container mx-auto flex justify-start items-center">
+    <div class="logo w-1/5 mr-8">
+      <h1 class="text-2xl">Ahmet Tunç</h1>
+    </div>
+    <nav class="flex w-4/5 justify-around items-center">
+      <div class="sections">
+        <ul class="flex">
+          {
+            navData.map((link) => (
+              <li class="ml-8 text-slate-300 hover:text-white transition-all">
+                <a href={link.path}>{link.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="socials">
+        <ul class="flex">
+          {
+            socialData.map((link) => (
+              <li class="ml-8">
+                <a href={link.path}>
+                  <div class="border p-2 border-white rounded-full hover:bg-white hover:text-black transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      class=""
+                    >
+                      <path fill="currentColor" d={link.icon} />
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="contact">
+        <a href="#contact">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Contact
+          </button>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
