@@ -2,10 +2,46 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Hero from "../components/Hero.astro";
+import Skills from "../components/Skills.astro";
+import Nav from "../components/Nav.astro";
+
+const skillData = [
+  {
+    title: "HTML",
+    image: {
+      src: "/assets/html.webp",
+      alt: "HTML",
+    },
+  },
+  {
+    title: "CSS",
+    image: {
+      src: "/assets/css.webp",
+      alt: "CSS",
+    },
+  },
+  {
+    title: "JavaScript",
+    image: {
+      src: "/assets/javascript.webp",
+      alt: "JavaScript",
+    },
+  },
+];
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <Hero />
+    <div
+      class="thumb bg-[url('/assets/background.gif')] bg-cover bg-center bg-no-repeat"
+    >
+      <Nav />
+      <Hero />
+    </div>
+    <Skills
+      sectionTitle="Skills"
+      sectionDescription="Skills Desc"
+      items={skillData}
+    />
   </main>
 </Layout>

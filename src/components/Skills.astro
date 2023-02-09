@@ -1,0 +1,40 @@
+---
+// props interface
+interface Props {
+  sectionTitle: string;
+  sectionDescription: string;
+  items: Array<{
+    title: string;
+    image: {
+      src: string;
+      alt: string;
+    };
+  }>;
+}
+
+const { sectionTitle, sectionDescription, items } = Astro.props as Props;
+---
+
+<section class="absolute">
+  <h2>{sectionTitle}</h2>
+  <p>{sectionDescription}</p>
+  <ul>
+    <!-- Carousel with next and prev buttons. 3 item viewed default -->
+    <li>
+      <div class="carousel">
+        <div class="carousel__container">
+          {
+            items.map((item) => (
+              <div class="carousel__item">
+                <img src={item.image.src} alt={item.image.alt} />
+                <h3>{item.title}</h3>
+              </div>
+            ))
+          }
+        </div>
+        <button> &#10094;</button>
+        <button> &#10095;</button>
+      </div>
+    </li>
+  </ul>
+</section>
