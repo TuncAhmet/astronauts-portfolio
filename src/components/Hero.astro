@@ -1,0 +1,45 @@
+---
+import { Image } from "@astrojs/image/components";
+---
+
+<section
+  id="home"
+  class="bg-[url('/assets/background.gif')] absolute mx-auto top-0 w-full h-screen bg-cover bg-center bg-no-repeat"
+>
+  <div
+    class="container mx-auto mt-40 flex justify-around text-center items-center p-12"
+  >
+    <div class="left w-2/3 flex flex-col justify-center items-center">
+      <div class="tag bg-indigo-600 mb-8 w-2/5 p-2">
+        <h3>Welcome to My Portfolio Website</h3>
+      </div>
+      <h1 class="mb-8 text-4xl font-bold">
+        I'm Ahmet a
+        <span class="hover:text-blue-600 cursor-default">Web Developer</span>
+      </h1>
+      <p class="mb-8 w-3/5 text-slate-300">
+        I'm a self taught software developer who focus on mostly web
+        development. I'll seed my projects which I build on learning path to my
+        portfolio website.
+      </p>
+      <a href="#contact">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Contact
+        </button>
+      </a>
+    </div>
+    <div class="right w-1/3 scale-150 animate-bounce transition-all">
+      <Image
+        src="/assets/laptop.webp"
+        alt="Ahmet's Profile Picture"
+        width={500}
+        height={500}
+        aspectRatio={1}
+        quality={100}
+        class="rounded-full"
+      />
+    </div>
+  </div>
+</section>
